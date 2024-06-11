@@ -161,4 +161,42 @@ public class SafeInput {
         } while(!YorN);
         return ReturnValue;
     }
+    public static void prettyHeader(String msg) {
+        int i;
+        int j;
+        int length = msg.length();
+        for (i = 1; i <= 60; i++) {
+            System.out.print("*");
+        }
+        System.out.println();
+        System.out.print("***");
+        if (length % 2 == 1) {
+            for (j = 1; j <= (26 - length / 2); j++) {
+                System.out.print(" ");
+            }
+            System.out.print(msg);
+            for (j = 1; j <= (27 - length / 2); j++) {
+                System.out.print(" ");
+            }
+            System.out.print("***" + "\n");
+        }
+        else {
+            for (j = 1; j <= (27 - length / 2); j++) {
+                System.out.print(" ");
+            }
+            System.out.print(msg);
+            for (j = 1; j <= (27 - length / 2); j++) {
+                System.out.print(" ");
+            }
+            System.out.print("***" + "\n");
+        }
+        for (i = 1; i <= 60; i++) {
+            System.out.print("*");
+        }
+    }
+    public static double CtoF(double Celsius) {
+        double returnValue;
+        returnValue = (Celsius * 1.8) + 32;
+        return returnValue;
+    }
 }
